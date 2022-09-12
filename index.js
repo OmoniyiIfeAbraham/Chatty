@@ -38,13 +38,15 @@ const server = app.listen(process.env.PORT, () => {
   console.log(`Server Started on PORT ${process.env.PORT}`);
 });
 
-const io = socket(server, {
-  cors: {
-    // origin: "http://localhost:3000",
-    origin: "https://chatt-y.herokuapp.com/",
-    credentials: true,
-  },
-});
+// const io = socket(server, {
+//   cors: {
+//     // origin: "http://localhost:3000",
+//     origin: "https://chatt-y.herokuapp.com/",
+//     credentials: true,
+//   },
+// });
+
+const io = socket(server);
 
 global.onlineUsers = new Map();
 
