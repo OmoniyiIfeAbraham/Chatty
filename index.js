@@ -15,11 +15,11 @@ app.use(express.json());
 app.use("/api/auth", userRoute);
 app.use("/api/messages", messageRoute);
 
-// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 mongoose
   .connect(process.env.MONGO_URL, {
