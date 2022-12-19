@@ -40,7 +40,7 @@ const server = app.listen(process.env.PORT, () => {
 const io = socket(server, {
   cors: {
     // origin: "http://localhost:3000",
-    origin: "https://chaty.up.railway.app/",
+    origin: "https://chaty.up.railway.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
